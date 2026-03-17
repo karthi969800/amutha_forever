@@ -47,10 +47,10 @@ const NameLanguages = ({ onNext }: NameLanguagesProps) => {
 
   useEffect(() => {
     if (currentIndex < names.length - 1) {
-      const timer = setTimeout(() => setCurrentIndex((i) => i + 1), 1500);
+      const timer = setTimeout(() => setCurrentIndex((i) => i + 1), 2500);
       return () => clearTimeout(timer);
     } else {
-      const timer = setTimeout(() => setFinished(true), 2000);
+      const timer = setTimeout(() => setFinished(true), 1000);
       return () => clearTimeout(timer);
     }
   }, [currentIndex]);
