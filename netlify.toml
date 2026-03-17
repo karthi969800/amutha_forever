@@ -1,0 +1,30 @@
+[build]
+command = "npm run build"
+publish = "dist"
+functions = "netlify/functions"
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+
+[dev]
+directory = "dist"
+port = 8888
+
+[[headers]]
+for = "/index.html"
+[headers.values]
+Cache-Control = "max-age=0, must-revalidate"
+
+[[headers]]
+for = "/*.js"
+[headers.values]
+Cache-Control = "max-age=31536000, immutable"
+Content-Type = "application/javascript; charset=utf-8"
+
+[[headers]]
+for = "/*.css"
+[headers.values]
+Cache-Control = "max-age=31536000, immutable"
+Content-Type = "text/css; charset=utf-8"
