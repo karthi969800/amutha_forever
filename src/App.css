@@ -1,0 +1,241 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* 💙 FLOATING HEARTS ANIMATIONS */
+/* ═══════════════════════════════════════════════════════════════ */
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) translateX(100px);
+    opacity: 0;
+  }
+}
+
+@keyframes float-up-slow {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-50vh) translateX(60px) rotate(180deg);
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-120vh) translateX(150px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* ✨ SPARKLE ANIMATIONS */
+/* ═══════════════════════════════════════════════════════════════ */
+
+@keyframes sparkle-drift {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(150px) scale(0.3);
+    opacity: 0;
+  }
+}
+
+@keyframes sparkle-twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes burst-sparkles {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty)) scale(0);
+    opacity: 0;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* 💙 GLOW EFFECTS */
+/* ═══════════════════════════════════════════════════════════════ */
+
+@keyframes pulse-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px hsl(var(--accent) / 0.4)) drop-shadow(0 0 20px hsl(var(--accent) / 0.2));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 16px hsl(var(--accent) / 0.6)) drop-shadow(0 0 30px hsl(var(--accent) / 0.3));
+    transform: scale(1.05);
+  }
+}
+
+@keyframes soft-glow {
+  0%, 100% {
+    text-shadow: 
+      0 0 10px rgba(219, 112, 147, 0.5),
+      0 0 20px rgba(219, 112, 147, 0.3),
+      0 0 30px rgba(219, 112, 147, 0.2);
+  }
+  50% {
+    text-shadow: 
+      0 0 20px rgba(219, 112, 147, 0.8),
+      0 0 30px rgba(219, 112, 147, 0.5),
+      0 0 40px rgba(219, 112, 147, 0.3);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.08);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* 🌸 SMOOTH TRANSITIONS */
+/* ═══════════════════════════════════════════════════════════════ */
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in-zoom {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateZ(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateZ(0);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* UTILITY CLASSES */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.glow-text {
+  animation: soft-glow 2.5s ease-in-out infinite;
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.heartbeat-pulse {
+  animation: heartbeat 1.2s ease-in-out infinite;
+}
+
+.smooth-fade-in {
+  animation: fade-in-up 0.8s ease-out;
+}
+
+.smooth-scale-in {
+  animation: fade-in-scale 0.8s ease-out;
+}
+
+.smooth-zoom-in {
+  animation: fade-in-zoom 0.8s ease-out;
+}
+
+.romantic-transition {
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Legacy styles */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
